@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ungdomsliv – Online Magasin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #222;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: #fff;
+      padding: 15px 25px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    nav button:hover, nav button.active {
+      background: #ff4d6d;
+    }
+    main {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      min-height: 400px;
+    }
+    section { display: none; }
+    section.active { display: block; }
+    h2 { color: #ff4d6d; }
+    .article {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 500px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 14px;
+    }
+    button.send {
+      background: #ff4d6d;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>UNGDOMSLIV</h1>
+    <p>Et online magasin om unges liv, tanker og drømme</p>
+  </header>
+
+  <nav>
+    <button class="tab active" onclick="showTab('start')">Start</button>
+    <button class="tab" onclick="showTab('magasin')">Magasin</button>
+    <button class="tab" onclick="showTab('kontakt')">Kontakt</button>
+  </nav>
+
+  <main>
+    <section id="start" class="active">
+      <h2>Velkommen</h2>
+      <p>Ungdomsliv er et magasin skabt til og af unge. Her deler vi historier om venskab, kærlighed, skole, mental sundhed og alt det midt imellem.</p>
+    </section>
+
+    <section id="magasin">
+      <h2>Artikler</h2>
+      <article>
+        <h3>Hvordan har unge mennesker det i skolen?</h3>
+        <p>Mange unge har det svært i skolen. Nogle forstår ikke det, læreren forklarer, og andre synes, at sproget er svært. Det kan gøre, at man føler sig usikker og ikke har lyst til at sige noget i timerne.</p>
+        <p>Derfor er det vigtigt at tale med unge mennesker og spørge, hvordan de har det. Når man taler sammen, kan de få hjælp og føle sig mindre alene. Lærerne skal huske, at mange unge er bange for at lave fejl.</p>
+        <p>Nogle unge føler sig pressede i skolen. De kan få ondt i hovedet eller maven, have svært ved at sove eller være bange for at sige noget forkert i klassen. Nogle mister også lysten til at komme i skole.</p>
+        <p>Hvad kan man gøre bedre? Der skal være mere fokus på trivsel og mindre fokus på karakterer. Mange unge tænker meget på, om de får en dårlig karakter, og hvad andre vil tænke om dem.</p>
+        <p>Det er vigtigt, at lærerne giver feedback. De skal fortælle, hvad eleven gør godt, og hvad der kan blive bedre. Det giver selvtillid og gør det nemmere at lære.</p>
+        <p>Lærerne bør også bruge lette ord, som alle kan forstå. Hvis der er svære ord, kan de forklare, hvad de betyder. På den måde føler flere unge sig trygge og kan følge bedre med i undervisningen.</p>
+      </article>
+    </section>
+
+    <section id="kontakt">
+      <h2>Skriv til os</h2>
+      <p>Har du en historie, et digt eller en mening? Send os en besked direkte på mail.</p>
+      <form action="mailto:dinemail@email.dk" method="post" enctype="text/plain">
+        <input type="text" name="Navn" placeholder="Dit navn" required />
+        <input type="email" name="Email" placeholder="Din email" required />
+        <textarea name="Besked" rows="5" placeholder="Din besked" required></textarea>
+        <button class="send" type="submit">Send</button>
+      </form>
+      <p><small>OBS: Husk at ændre email-adressen i koden.</small></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Ungdomsliv Magasin</p>
+  </footer>
+
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
